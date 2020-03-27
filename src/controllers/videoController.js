@@ -4,7 +4,7 @@ import Comment from "../models/Comment"
 
 export const home = async(req, res) => {
    try{const videos = await Video.find({}).sort({_id:-1});
-    res.render("Home", {pageTitle: "home", videos});
+    res.render("home", {pageTitle: "home", videos});
    }catch (error){
        console.log(error);
        res.render("home",{pageTitle:"home", videos:[]});

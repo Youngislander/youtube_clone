@@ -3,7 +3,7 @@ import passport from "passport"
 import User from "../models/User";
 
 
-export const getJoin = (req, res) => res.render("Join", {pageTitle: "Join"});
+export const getJoin = (req, res) => res.render("join", {pageTitle: "Join"});
 
 export const postJoin = async(req, res,next) => {
     const {
@@ -21,7 +21,7 @@ export const postJoin = async(req, res,next) => {
     }
 }
 
-export const getLogin = (req, res) => res.render("Login", {pageTitle: "Login"});
+export const getLogin = (req, res) => res.render("login", {pageTitle: "Login"});
 export const postLogin = passport.authenticate("local",{ 
     failureRedirect: "/login",
     successRedirect:"/home"
@@ -97,7 +97,7 @@ export const getMe = async(req, res) => {
     res.render("userDetail", {pageTitle: "User Detail", user});
 };
 
-export const users = (req, res) => res.render("Users", {pageTitle: "Users"});
+export const users = (req, res) => res.render("users", {pageTitle: "Users"});
 export const userDetail = async(req, res) => {
     const {params:{id}} = req;
     try{
@@ -127,8 +127,8 @@ export const postEditProfile = async(req, res) => {
     }
 };
 
-export const getEditProfile = (req, res) => res.render("EditProfile", {pageTitle: "Edit profile"});
-export const getChangePassword = (req, res) => res.render("ChangePassword", {pageTitle: "Change password"});
+export const getEditProfile = (req, res) => res.render("editProfile", {pageTitle: "Edit profile"});
+export const getChangePassword = (req, res) => res.render("changePassword", {pageTitle: "Change password"});
 export const postChangePassword = async(req, res) => {
     const {
         body:{oldPassword, newPassword, newPassword1}
