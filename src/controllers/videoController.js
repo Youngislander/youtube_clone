@@ -26,7 +26,7 @@ export const search = async(req, res) => {
     res.render("search", {pageTitle: "Search", searchingBy, videos});
 };
 
-export const getUpload = (req, res) => res.render("Upload", {pageTitle: "Upload"});
+export const getUpload = (req, res) => res.render("upload", {pageTitle: "Upload"});
 export const postUpload = async(req, res) => { 
     const {
         body: {title, description},
@@ -53,7 +53,7 @@ export const videoDetail = async (req, res) => {
         const video = await Video.findById(id)
           .populate("creator")
           .populate("comments");
-        res.render("VideoDetail", {pageTitle: "Video detail", video});
+        res.render("videoDetail", {pageTitle: "Video detail", video});
         console.log(video.comments)
     } catch (error){
         res.redirect(routes.home)
