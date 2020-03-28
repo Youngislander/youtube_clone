@@ -7,7 +7,7 @@ const s3 = new aws.S3({
     accessKeyId: process.env.AWS_KEY,
     secretAccessKEY: process.env.AWS_PRIVATE_KEY,
     region : "ap-northeast-2"
-})
+});
 
 export const multerVideo = multer({
     storage: multerS3({
@@ -15,7 +15,7 @@ export const multerVideo = multer({
         acl: "public-read",
         bucket:"wetube/video"
     })
-})
+});
 
 export const multerAvatar = multer({
     storage: multerS3({
