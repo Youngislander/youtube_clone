@@ -9,7 +9,7 @@ const s3 = new aws.S3({
     region : "ap-northeast-2"
 })
 
-const multerVideo = multer({
+export const multerVideo = multer({
     storage: multerS3({
         s3,
         acl: "public-read",
